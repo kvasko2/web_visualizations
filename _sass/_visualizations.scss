@@ -1,0 +1,200 @@
+.sparkline {
+	height:auto;
+	width: auto;
+	display: block;
+    margin: auto;
+	padding-top:25%;
+	g {
+		.sparkline-line {
+			fill:none;
+			stroke: $widget-sparkline-stroke-color;
+		}
+
+		.sparkline-circle {
+			fill: $widget-sparkline-stroke-color;
+		}
+
+		.sparkline-backdrop {
+			fill: $widget-sparkline-backdrop-color;
+		}
+	}
+}
+
+.linearmeter-container {
+	height:auto !important;
+	width: auto !important;
+	color: $overtime-widget-primary-color;
+	padding-top:18.75%;
+
+	.linearmeter {
+		height: auto;
+		width:auto;
+		display: block;
+		margin: auto;
+		padding-top: 6px;
+		g {
+			.linearmeter-backdrop {
+				fill: $widget-linearmeter-backdrop-color;
+			}
+
+			.linearmeter-meter {
+				fill: $overtime-widget-primary-color;
+			}
+		}
+	}
+}
+
+.line-chart-container {
+	color: $overtime-widget-primary-color;
+
+	svg {
+		@include horizontal-center();
+	}
+}
+
+.bar-chart-container {
+	color: $overtime-widget-primary-color;
+
+	svg {
+		@include horizontal-center();
+	}
+}
+
+.pie-chart-container {
+	color: $overtime-widget-primary-color;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+
+	svg {
+		width: auto;
+		height: auto;
+		@include to-rem(padding-top, 1);
+		@include horizontal-center();
+
+		text {
+			@include to-rem(font-size, 0.75);
+			text-transform: uppercase;
+		}
+	}
+}
+
+.doughnut-gauge-container {
+	color: $overtime-widget-primary-color;
+
+	.doughnut-gauge-title {
+		font-weight: bold;
+		@include to-rem(font-size, 0.75);
+		text-align: center;
+		color: $doughnut-gauge-title-text-color;
+	}
+
+	.doughnut-gauge-extra {
+		@include to-rem(font-size, 0.75);
+		text-align: center;
+		color: $tooltip-font-color;
+	}
+
+	.warning {
+		color: $alert-color;
+	}
+
+	svg {
+		@include horizontal-center();
+		height:auto;
+		width: auto;
+	}
+
+	g {
+		.doughnut-gauge-backdrop {
+			fill: $background-color;
+		}
+
+		.doughnut-gauge-number {
+			@include to-rem(font-size, 3);
+			text-anchor: middle;
+			fill: $doughnut-meter-active-text-color;
+		}
+
+		.doughnut-gauge-number-warning {
+			@include to-rem(font-size, 3);
+			text-anchor: middle;
+			fill: $alert-color;
+		}
+
+		.doughnut-gauge-inner-circle {
+			fill: #FFF;
+		}
+	}
+}
+
+.doughnut-meter-container {
+	position: relative;
+	@include vertical-center();
+
+	.doughnut-meter {
+		display:block;
+		width: auto;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		g {
+			.doughnut-meter-backdrop{
+				fill: $doughnut-meter-backdrop-color;
+			}
+			.doughnut-meter-meter{
+				fill: $overtime-widget-primary-color;
+			}
+			.doughnut-meter-circle {
+				fill: $overtime-widget-primary-color;
+			}
+			.doughnut-meter-active-number {
+				@include to-rem(font-size, 6.25);
+				text-anchor: middle;
+				fill: $doughnut-meter-active-text-color;
+			}
+			.doughnut-meter-active-text {
+				@include to-rem(font-size, 0.875);
+				text-anchor: middle;
+				fill: $doughnut-meter-active-text-color;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+			.doughnut-meter-pending-text {
+				@include to-rem(font-size, 0.875);
+				fill: $alert-color;
+				text-transform: uppercase;
+				text-anchor: middle;
+			}
+		}
+	}
+}
+
+// Override c3 stuff.
+.c3 {
+	// Change text attributes.
+	svg {
+		@include to-rem(font-size, 0.75);
+		fill: $tooltip-font-color;
+	}
+	// Hide the origin lines.
+	path {
+		stroke:transparent;
+	}
+
+	// Hide the tick marks
+	.tick > line {
+		stroke:transparent;
+	}
+
+	/*circle {
+
+	}*/
+}
+
+.area-chart {
+	.c3-area {
+		opacity:1;
+		fill: #eddbed !important;
+	}
+}

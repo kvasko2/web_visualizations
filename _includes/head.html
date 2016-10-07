@@ -1,0 +1,29 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <link rel="stylesheet" href="{{ "/css/font-awesome.min.css" | prepend: site.url }}">
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.url }}">
+    <script type="application/javascript" src="{{ "/js/vendor/jquery.min.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+    <!-- jQuery UI -->
+    <script type="application/javascript" src="{{ "/js/vendor/jquery-ui.min.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+
+    <!-- jQuery Touch Punch - Enable Touch Drag and Drop -->
+    <script type="application/javascript" src="{{ "/js/vendor/jquery.touch-punch.min.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+
+    <!-- D3 -->
+    <script type="application/javascript" src="{{ "/js/vendor/d3/d3.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+
+    <!-- Shapeshift -->
+    <script type="application/javascript" src="{{ "/js/vendor/jquery.shapeshift.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+
+    <!-- Color Altering Functions -->
+    <script type="application/javascript" src="{{ "/js/utils/alterColor.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+
+    <!-- Tooltips -->
+    <script type="application/javascript" src="{{ "/js/custom_charts/tooltip.js" | prepend: site.baseurl | prepend: site.url }}"></script>
+</head>

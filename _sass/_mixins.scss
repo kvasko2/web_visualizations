@@ -1,0 +1,83 @@
+// Mixin that allows to specify arbitrary CSS properties with and output rem with pixel fallback.
+// Shorthand assignments are supported too!
+// Based off http://intuio.at/en/blog/an-improved-sass-rem-mixin-for-unitless-numbers/
+@mixin to-rem($property, $values){
+    
+    // Placeholder variables
+    $output_px:  "";
+    $output_rem: "";
+ 
+    // Parameter $values might be a list of elements
+    @each $value in $values {
+        
+        // Current value is a valid number and greater than 0
+        @if $value != auto and $value != none and $value != 0 {
+        
+          $value: $value / ($value * 0 + 1);
+          $baseForRem: $baseForRem / ($baseForRem * 0 + 1);
+            
+          // Add 'px' and 'rm' to the current value and store in
+          // placeholder variables
+          $output_px: #{$output_px + " " + ($value * $baseForRem) + px};
+          $output_rem: #{$output_rem + " " + ($value) + rem};
+        
+        }
+       
+        // Current value is 'auto' or 0
+        @else {
+            
+            // Add only 'auto' or 0 to the placeholder variables
+            $output_px: #{$output_px + " " + $value};
+            $output_rem: #{$output_rem + " " + $value};
+        
+        }
+
+    }
+ 
+    // Output the CSS property in pixels and rems
+    #{$property}:$output_px;
+    #{$property}:$output_rem;
+
+}
+
+// Since centering objects can be a pain, this mixin helps.
+@mixin vertical-center {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin horizontal-center {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@mixin vertical-horizontal-center {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@mixin vertical-horizontal-center-abs {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+// Box sizing.
+@mixin box-sizing {
+    box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}

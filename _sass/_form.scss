@@ -1,0 +1,152 @@
+.form {
+	width: 94%;
+
+	.field-container {
+		color: $form-text-color;
+
+		@include to-rem(margin-bottom, 1);
+
+		&:after {
+			content: " ";
+			display:block;
+			clear:both;
+		}
+
+		.field-column {
+			width: 50%;
+			float:left;
+
+			.field-title {
+				text-transform: capitalize;
+				@include to-rem(font-size, 0.75);
+				text-align: left;
+				font-weight: bold;
+				width: 85%;
+				//height: 100%;
+				@include to-rem(margin-bottom, 0.5);
+
+				margin-left:auto;
+				margin-right:auto;
+			}
+
+			.field {
+				width: 85%;
+				@include to-rem(min-height, 2);
+				border: solid thin #808080;
+				@include to-rem(margin-bottom, 0.5);
+
+				margin-left:auto;
+				margin-right:auto;
+
+				.text-field {
+					@include to-rem(font-size, 0.75);
+					text-align: left;
+					@include to-rem(padding, 0.5);
+					height: 100%;
+
+					input {
+						width: 100%;
+						border: none;
+						&:focus {
+							outline: 0;
+						}
+					}
+				}
+
+				.drop-list {
+					height: 100%;
+
+					&:after {
+						content: " ";
+						display:block;
+						clear:both;
+					}
+
+					.selection {
+						@include to-rem(font-size, 0.75);
+						text-align: left;
+						@include to-rem(padding, 0.5);
+						float:left;
+						height: 100%;
+						width: 100%;
+
+						input {
+							resize: none;
+							width: 100%;
+							height: 100%;
+							border: none;
+							&:focus {
+								outline: 0;
+							}
+						}
+
+						datalist {
+							border:none;
+							&:focus {
+								outline: 0;
+							}
+							
+							@include to-rem(font-size, 0.75);
+							color: $form-text-color;
+						}
+					}
+				}
+
+				.extended-text-field {
+					@include to-rem(font-size, 0.75);
+					text-align: left;
+					@include to-rem(padding, 0.5);
+					@include to-rem(min-height, 7);
+
+					textarea {
+						resize: none;
+						width: 100%;
+						height: 100%;
+						border: none;
+						&:focus {
+							outline: 0;
+						}
+					}
+				}
+
+				.replacement-text {
+					color: $form-replace-text-color;
+				}
+			}
+		}
+	}
+
+	.action-container {
+		width: 94%;
+		display: table;
+		border-top: solid thin #808080;
+		@include to-rem(padding-top, 1);
+		margin-left:auto;
+		margin-right:auto;
+
+		.button {
+			float:right;
+			color: #FFF;
+            text-transform: uppercase;
+            text-align: center;
+            @include to-rem(font-size, 0.75);
+            font-weight: bold;
+
+            cursor:pointer;
+
+            @include to-rem(width, 8);
+            @include to-rem(height, 2.5);
+            @include to-rem(margin-left, 1);
+		}
+		.cancel-button {
+			background-color: #999;
+		}
+		.save-button {
+			background-color: $add-button-color;
+		}
+
+		.button-text {
+            @include vertical-center();
+        }
+	}
+}
