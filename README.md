@@ -1,5 +1,8 @@
-Orientation to Prototype
-===============
+# Web Visualizations
+
+Some examples of visualizations created on projects over the past few years for the web.
+
+0. Open `//index.html` in a browser from local computer.
 
 Libraries used:
 - [jquery](http://jquery.com/)

@@ -678,7 +678,9 @@ ul, ol, dl, figure,
       -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
-      color: #e86700; }
+      color: #e86700;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     .widget-grid .widget .table-widget {
       overflow: auto;
       overflow-x: hidden; }
@@ -1750,6 +1752,11 @@ ul, ol, dl, figure,
 .area-chart .c3-area {
   opacity: 1;
   fill: #eddbed !important; }
+
+canvas {
+  width: 200px !important;
+  height: 200px !important;
+  display: inline-block; }
 
 .sparkline-tooltip {
   width:  204px;
